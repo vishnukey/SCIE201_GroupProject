@@ -16,7 +16,7 @@
 ## Questions In Terms of SQL
 1. ```SELECT date, offered,(answered*1.0)/offered*100 FROM "<tableName>" ORDER BY date;```
 2. ```SELECT offered, avg_ans_delay_seconds FROM "<tableName>";```
-3. ```SELECT offered, answered, abandonned FROM "\<tableName\>";```
+3. ```SELECT offered, answered, abandonned FROM "<tableName>";```
 4. ```SELECT STRFTIME("%Y-%m", date), AVG(answered)/AVG(offered)*100 AS "effectiveness" FROM "<tableName>" GROUP BY STRFTIME("%Y-%m", date);```
 5. ```SELECT STRFTIME("%m", date), AVG(offered) FROM "<tableName>" GROUP BY STRFTIME("%m", date);```
 6. ```SELECT offered, (answered*1.0)/offered*100 AS effectivness FROM "<tableName>" ORDER BY offered;```
