@@ -4,11 +4,11 @@ png(file="out1_calgary_combined.jpg")
 
 db = dbConnect(SQLite(), dbname="../311CallCentre.db")
 
-query <- dbSendQuery(db, "SELECT 
-        AVG(offered), 
-        AVG(answered)/AVG(offered)*100 AS answered, 
-        AVG(abandonned)/AVG(offered)*100 AS abandoned 
-FROM 
+query <- dbSendQuery(db, "SELECT
+        AVG(offered),
+        AVG(answered)/AVG(offered)*100 AS answered,
+        AVG(abandonned)/AVG(offered)*100 AS abandoned
+FROM
         'calgary_combined';")
 
 data <- dbFetch(query, n=-1)
@@ -21,7 +21,7 @@ cols <- c("red", "blue")
 pie(items,
         labels = paste(as.character(round(items, 2)), "%"),
         radius = 1,
-        main = "Number of calls answered vs numbered abandoned",
+        main = "Number of Calls Answered vs Number Abandoned",
         col = cols
 )
 
