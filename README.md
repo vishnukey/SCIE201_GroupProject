@@ -15,7 +15,7 @@
 
 ## Questions In Terms of SQL
 1. 
-        ```sqlite3
+        ```sql
         SELECT 
                 date, 
                 offered,
@@ -33,24 +33,27 @@
         FROM 
                 "<tableName>";
         ```
-3. ```
-SELECT 
-        offered, 
-        answered, 
-        abandonned 
-FROM 
-        "<tableName>";
+3. 
+                ```
+                SELECT 
+                offered, 
+                answered, 
+                abandonned 
+        FROM 
+                "<tableName>";
+        ```
+4. 
+        ```
+        SELECT 
+                STRFTIME("%Y-%m", date) AS date, 
+                AVG(answered)/AVG(offered)*100 AS "effectiveness" 
+        FROM 
+                "<tableName>" 
+        GROUP BY 
+                STRFTIME("%Y-%m", date);
+        ```
+5. 
 ```
-4. ```
-SELECT 
-        STRFTIME("%Y-%m", date) AS date, 
-        AVG(answered)/AVG(offered)*100 AS "effectiveness" 
-FROM 
-        "<tableName>" 
-GROUP BY 
-        STRFTIME("%Y-%m", date);
-```
-5. ```
 SELECT 
         STRFTIME("%m", date), 
         AVG(offered) 
@@ -59,7 +62,8 @@ FROM
 GROUP BY 
         STRFTIME("%m", date);
 ```
-6. ```
+6. 
+```
 SELECT 
         offered, 
         (answered*1.0)/offered*100 AS effectivness 
