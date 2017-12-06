@@ -89,8 +89,10 @@ for query in queries:
     try:
         curse.execute(q, params)
     except sqlite3.OperationalError as e:
-        curse.execute("CREATE TABLE '{}' ('id' TEXT NOT NULL, 'date' DATETIME NOT NULL, 'offered' INTEGER NOT NULL, 'answered' INTEGER NOT NULL, 'avg_ans_delay_seconds' INTEGER NOT NULL, 'max_ans_delay' INTEGER, 'abandonned' INTEGER NOT NULL, 'delay_calls_product' INTEGER NOT NULL)".format(tableName))
+        curse.execute("CREATE TABLE '{}' ('id' TEXT NOT NULL, 'date' DATETIME NOT NULL, 'offered' INTEGER NOT NULL, 'answered' INTEGER NOT NULL, 'avg_ans_delay_seconds' INTEGER NOT NULL, 'max_ans_delay' INTEGER, 'abandonned' INTEGER NOT NULL, 'delay_calls_product' INTEGER NOT NULL, PRIMARY KEY(date))".format(tableName))
         curse.execute(q, params)
+    except sqlite3.IntegrityError as e:
+         continue
 
 conn.commit()
 
