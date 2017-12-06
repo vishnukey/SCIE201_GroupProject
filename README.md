@@ -14,23 +14,25 @@
 6. How are call centres responding to changes in volume?
 
 ## Questions In Terms of SQL
-1. ```
-SELECT 
-        date, 
-        offered,
-        (answered*1.0)/offered*100 AS effectiveness
-FROM 
-        "<tableName>" 
-ORDER BY 
-        date;
-```
-2. ```
-SELECT 
-        offered, 
-        avg_ans_delay_seconds 
-FROM 
-        "<tableName>";
-```
+1. 
+        ```sqlite3
+        SELECT 
+                date, 
+                offered,
+                (answered*1.0)/offered*100 AS effectiveness
+        FROM 
+                "<tableName>" 
+        ORDER BY 
+                date;
+        ```
+2. 
+        ```sqlite3
+        SELECT 
+                offered, 
+                avg_ans_delay_seconds 
+        FROM 
+                "<tableName>";
+        ```
 3. ```
 SELECT 
         offered, 
