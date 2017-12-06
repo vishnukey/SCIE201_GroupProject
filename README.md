@@ -36,8 +36,7 @@ SELECT
 FROM 
         "<tableName>";
 ```
-4. What is the monthly average effectiveness?
-        - effectiveness = offered / answered
+4. What is the monthly average effectiveness? Where: effectiveness = offered / answered
 ```sql
 SELECT 
         STRFTIME("%Y-%m", date) AS date, 
