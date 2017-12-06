@@ -9,10 +9,13 @@
 ```sql
 SELECT 
         date, 
-        offered,
-        (answered*1.0)/offered*100 AS effectiveness
+        offered, 
+        (answered*1.0)/offered*100 AS effectiveness 
 FROM 
-        "<tableName>" 
+        'calgary_combined' 
+WHERE 
+        STRFTIME('%Y',date) = '2015' AND 
+        (answered*1.0)/offered*100 < 100 
 ORDER BY 
         date;
 ```
