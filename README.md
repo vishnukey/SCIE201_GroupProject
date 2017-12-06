@@ -26,7 +26,7 @@ ORDER BY
         date;
 ```
 2. 
-```sqlite3
+```sql
 SELECT 
         offered, 
         avg_ans_delay_seconds 
@@ -34,7 +34,7 @@ FROM
         "<tableName>";
 ```
 3. 
-```
+```sql
 SELECT 
         offered, 
         answered, 
@@ -43,7 +43,7 @@ FROM
         "<tableName>";
 ```
 4. 
-```
+```sql
 SELECT 
         STRFTIME("%Y-%m", date) AS date, 
         AVG(answered)/AVG(offered)*100 AS "effectiveness" 
@@ -53,7 +53,7 @@ GROUP BY
         STRFTIME("%Y-%m", date);
 ```
 5. 
-```
+```sql
 SELECT 
         STRFTIME("%m", date), 
         AVG(offered) 
@@ -63,7 +63,7 @@ GROUP BY
         STRFTIME("%m", date);
 ```
 6. 
-```
+```sql
 SELECT 
         offered, 
         (answered*1.0)/offered*100 AS effectivness 
